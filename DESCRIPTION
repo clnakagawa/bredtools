@@ -1,0 +1,15 @@
+Package: bredtools
+Title: Package For Lazy BED File Handling
+Version: 0.0.0.9000
+Authors@R: 
+    person("Carter", "Nakagawa", , "clnakagawa02@gmail.com", role = c("aut", "cre"))
+Description: This package is for lazy handling of bed and bed-like files 
+  (tab-separated, has chr, start, and end as first three columns) without GRanges.
+  This uses data.table but is probably not faster than bedtools for large datasets,
+  the point is just for convenienve and fun.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Imports: 
+    data.table
