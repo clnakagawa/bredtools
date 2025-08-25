@@ -23,3 +23,21 @@ bread <- function(bedfile, ...) {
   }
   return(bdt)
 }
+
+#' @description
+#' `bintersect` takes two bed-like data tables and returns intersecting
+#' ranges as another data table
+#' @details
+#' Options mirror bedtools options (e.g. -wa), retains
+#' properties (additional columns) of first bed file (unless specified)
+#'
+#' @param bedA path to the first bed file
+#' @param bedB path to the second bed file
+#' @returns A data table object
+#'
+#' @export
+bintersect <- function(bedA, bedB) {
+  nf <- ncol(bed1)
+  overlaps <- foverlaps(bedA, bedB, type = "any", nomatch = 0)
+  return(overlaps[, `:=` (start = pmax(start, i.start), end = pmax(end, i.end))][, 1:nf])
+}
