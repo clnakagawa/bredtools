@@ -2,5 +2,10 @@
 
 export(bintersect)
 export(bread)
+export(bwrite)
+export(bmerge)
+export(bunion)
+export(bsum)
+export(bjaccard)
 
 import(data.table)
